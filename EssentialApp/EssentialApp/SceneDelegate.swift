@@ -101,6 +101,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .eraseToAnyPublisher()
     }
     
+    private func makeBundleImageLoader(fileUrl: URL) -> FeedImageDataLoader.Publisher {
+        let bundleImageLoader = BundleFeedImageDataLoader()
+        return bundleImageLoader.loadImageDataPublisher(from: fileUrl)
+    }
+    
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
         let localImageLoader = LocalFeedImageDataLoader(store: store)
 
