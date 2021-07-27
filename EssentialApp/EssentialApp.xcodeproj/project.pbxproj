@@ -38,6 +38,9 @@
 		0895DAAC234B3F7E0031BB2D /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0895DAA9234B3F7E0031BB2D /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0895DAAD234B3F7E0031BB2D /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895DAAA234B3F7E0031BB2D /* EssentialFeediOS.framework */; };
 		0895DAAE234B3F7E0031BB2D /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0895DAAA234B3F7E0031BB2D /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AFA9847226B06B89001D051C /* jedediah.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFA9846F26B06B89001D051C /* jedediah.jpg */; };
+		AFA9847326B06B89001D051C /* brisbane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFA9847026B06B89001D051C /* brisbane.jpg */; };
+		AFA9847426B06B89001D051C /* vejle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFA9847126B06B89001D051C /* vejle.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		0895DA9F234B3B980031BB2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0895DAA9234B3F7E0031BB2D /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0895DAAA234B3F7E0031BB2D /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA9846F26B06B89001D051C /* jedediah.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jedediah.jpg; sourceTree = "<group>"; };
+		AFA9847026B06B89001D051C /* brisbane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brisbane.jpg; sourceTree = "<group>"; };
+		AFA9847126B06B89001D051C /* vejle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vejle.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 		0895DA85234B3B950031BB2D /* EssentialApp */ = {
 			isa = PBXGroup;
 			children = (
+				AFA9846E26B06B89001D051C /* Images */,
 				0895DA86234B3B950031BB2D /* AppDelegate.swift */,
 				0895DA88234B3B950031BB2D /* SceneDelegate.swift */,
 				0835BF6C24850F9800A793D2 /* CombineHelpers.swift */,
@@ -198,6 +205,16 @@
 				0895DAAA234B3F7E0031BB2D /* EssentialFeediOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFA9846E26B06B89001D051C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AFA9846F26B06B89001D051C /* jedediah.jpg */,
+				AFA9847026B06B89001D051C /* brisbane.jpg */,
+				AFA9847126B06B89001D051C /* vejle.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0895DA93234B3B970031BB2D /* LaunchScreen.storyboard in Resources */,
+				AFA9847326B06B89001D051C /* brisbane.jpg in Resources */,
+				AFA9847226B06B89001D051C /* jedediah.jpg in Resources */,
+				AFA9847426B06B89001D051C /* vejle.jpg in Resources */,
 				0895DA90234B3B970031BB2D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
