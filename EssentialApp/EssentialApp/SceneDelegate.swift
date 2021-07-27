@@ -61,6 +61,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.pushViewController(comments, animated: true)
     }
     
+    private func showNextImage(tappedImage image: FeedImage) {
+        let imageDetail = FeedUIComposer.feedComposedWith(
+            feedLoader: makeMockFeedLoader,
+            imageLoader: makeBundleImageLoader,
+            selection: showNextImage)
+        navigationController.pushViewController(imageDetail, animated: true)
+    }
+    
     private func makeRemoteCommentsLoader(url: URL) -> () -> AnyPublisher<[ImageComment], Error> {
         return { [httpClient] in
             return httpClient
