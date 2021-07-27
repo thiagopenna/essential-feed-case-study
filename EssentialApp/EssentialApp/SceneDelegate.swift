@@ -127,3 +127,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             })
     }
 }
+
+public final class BundleFeedImageDataLoader: FeedImageDataLoader {
+    
+    public init() { }
+    
+    public enum LoadError: Error {
+        case failed
+        case notFound
+    }
+    
+    public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+        let task = LoadImageDataTask(completion)
+        do {
+            let data = try Data(contentsOf: url)
+            task.complete(with: .success(data))
+        } catch {
+            task.complete(with: .failure(LoadError.failed))
+        }
+        return task
+    }
+    
+    private final class LoadImageDataTask: FeedImageDataLoaderTask {
+        private var completion: ((FeedImageDataLoader.Result) -> Void)?
+        
+        init(_ completion: @escaping (FeedImageDataLoader.Result) -> Void) {
+            self.completion = completion
+        }
+        
+        func complete(with result: FeedImageDataLoader.Result) {
+            completion?(result)
+        }
+        
+        func cancel() {
+            completion = nil
+        }
+    }
+}
