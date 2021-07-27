@@ -29,9 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private lazy var navigationController = UINavigationController(
         rootViewController: FeedUIComposer.feedComposedWith(
-            feedLoader: makeRemoteFeedLoaderWithLocalFallback,
-            imageLoader: makeLocalImageLoaderWithRemoteFallback,
-            selection: showComments))
+            feedLoader: makeMockFeedLoader,
+            imageLoader: makeBundleImageLoader,
+            selection: showNextImage))
 
 	convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
 		self.init()
