@@ -80,6 +80,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .fallback(to: localFeedLoader.loadPublisher)
     }
     
+    private func makeMockFeedLoader() -> AnyPublisher<[FeedImage], Error> {
+        let index = navigationController.viewControllers.count
+        let mockImage1 = FeedImage(id: UUID(),
+                                  description: "Image index \(index*3-2)",
+                                  location: nil,
+                                  url: Bundle.main.url(forResource: "brisbane", withExtension: "jpg")!)
+        
+        let mockImage2 = FeedImage(id: UUID(),
+                                  description: "Image index \(index*3-1)",
+                                  location: nil,
+                                  url: Bundle.main.url(forResource: "jedediah", withExtension: "jpg")!)
+        
+        let mockImage3 = FeedImage(id: UUID(),
+                                  description: "Image index \(index*3)",
+                                  location: nil,
+                                  url: Bundle.main.url(forResource: "vejle", withExtension: "jpg")!)
+        return Just([mockImage1, mockImage2, mockImage3])
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
+    
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
         let localImageLoader = LocalFeedImageDataLoader(store: store)
 
